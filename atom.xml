@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>App Directory Feed</title>
+  <id>https://x0.rf.gd/a/x0-games-multiplayer/</id>
+  <updated>2026-07-19T05:15:57-04:00</updated>
+  <entry>
+    <title>kitty-2026</title>
+    <id>https://x0.rf.gd/a/x0-games-multiplayer/kitty-2026/</id>
+    <updated>2026-07-19T00:02:25-04:00</updated>
+    <link href="https://x0.rf.gd/a/x0-games-multiplayer/kitty-2026/"/>
+    <summary>✅ X0 Team - X0 Store KaiOS </summary>
+    <icon>https://x0.rf.gd/a/x0-games-multiplayer/icon.png</icon>
+    <content type="text">✅ X0 Team - X0 Store KaiOS </content>
+  </entry>
+</feed>
