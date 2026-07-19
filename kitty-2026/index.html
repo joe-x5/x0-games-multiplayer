@@ -2,12 +2,18 @@
   <head>
     <title>Multiplayer Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
     
+-->
+
     <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
   <body>
+
+<div class="kcanvas5354">
 
     <div class="game-container">
     </div>
@@ -19,7 +25,62 @@
       <div>
         <button id="player-color">Change Color</button>
       </div>
+
+<div class="message-area" id="messageArea">
+  <div id="messages"></div>
+</div>
+
     </div>
+
+</div>
+
+<!-- Your custom scripts -->
+<script>
+  // Function to add message to chat area
+  function addMessage(text, sender = "system") {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+
+    // Show sender info if needed
+    if (sender === "user") {
+      messageDiv.textContent = "You: " + text;
+    } else if (sender === "other") {
+      messageDiv.textContent = "Other: " + text;
+    } else {
+      messageDiv.textContent = text;
+    }
+
+    document.getElementById('messages').appendChild(messageDiv);
+    document.querySelector('.message-area').scrollTop = document.querySelector('.message-area').scrollHeight;
+  }
+
+  // Handle keydown for '0'
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '0') {
+      const message = prompt("Enter your message:");
+      if (message !== null && message.trim() !== "") {
+        // Push message to Firebase
+        database.ref('broadcastMessages').push({
+          text: message,
+          timestamp: Date.now(),
+          senderId: "user" // optional, to identify sender
+        });
+        // Optionally, show your message immediately
+        addMessage(message, "user");
+      }
+    }
+  });
+
+  // Listen for new messages from Firebase
+  database.ref('broadcastMessages').on('child_added', (snapshot) => {
+    const data = snapshot.val();
+    if (data && data.text) {
+      // Show every message to all clients
+      // If you want to differentiate sender, check data.senderId
+      addMessage(data.text, "other");
+    }
+  });
+</script>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     
@@ -39,8 +100,12 @@
   appId: "1:863734829369:web:cc7e00ffd833facec3d8e8",
   measurementId: "G-KSL1VMVF58"
 };
-      firebase.initializeApp(firebaseConfig);
+      // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
     </script>
+
+
 
 
     <script src="KeyPressListener.js"></script>
