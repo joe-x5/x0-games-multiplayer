@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://x0.rf.gd/a/x0-games-multiplayer/</loc>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://x0.rf.gd/a/x0-games-multiplayer/kitty-2026/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <news:news>
+      <news:publication>
+        <news:name>kitty-2026</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:title>kitty-2026</news:title>
+      <news:publication_date>2026-07-19</news:publication_date>
+    </news:news>
+    <image:image>
+      <image:loc>https://x0.rf.gd/a/x0-games-multiplayer/icon.png</image:loc>
+    </image:image>
+  </url>
+</urlset>
