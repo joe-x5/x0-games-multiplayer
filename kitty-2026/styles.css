@@ -5,6 +5,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
   background: linear-gradient(180deg, #64BEFF -50%, #6e96ff 69.71%, #2a65ff 150%);
   font-family: 'Source Sans Pro', sans-serif;
@@ -171,51 +172,20 @@ button:active {
 /* Responsive adjustments for very small screens */
 @media (max-width: 240px), (max-height: 240px) {
   /* Reduce padding and margins in player-info */
-  .player-info {
-    padding: 0.5em;
-    gap: 0.2em;
-  }
+ 
+.kcanvas5354 {
+  transform: scale(0.7);
+transform-origin: top left;
 
-  /* Reduce font size in labels and inputs */
-  label {
-    font-size: 10px;
-  }
+/* Negative margins to compensate for the scaled-down size */
+margin-right: -30%;
+margin-bottom: -30%;
 
-  input[type="text"] {
-    font-size: 14px;
-    height: 30px;
-    width: 100px;
-    padding-left: 0.3em;
-  }
+/* Increase width and height to keep content dense after scaling */
+width: 142.86%;
+height: 142.86%;
 
-  button {
-    font-size: 14px;
-    height: 30px;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-  }
+border: none;
+}
 
-  /* Scale down the game container */
-  .game-container {
-    width: 120px;
-    height: 104px;
-    transform: scale(1.5);
-  }
-
-  /* Reduce size of grid cells if needed */
-  .grid-cell {
-    width: 8px;
-    height: 8px;
-  }
-
-  /* Adjust character sprite sizes */
-  .Character_sprite {
-    background-size: contain;
-  }
-
-  /* Reduce font size of character name container */
-  .Character_name-container {
-    font-size: 3px;
-    padding: 0.5px 1px 0.5px;
-  }
 }
